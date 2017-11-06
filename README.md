@@ -58,6 +58,7 @@ WHERE column_name operator value;
 
 
 **davisql>** CREATE SCHEMA Zoo_schema;
+
 **davisql>** CREATE TABLE Zoo (
 Animal_ID INT PRIMARY KEY,
 Name VARCHAR(20),
