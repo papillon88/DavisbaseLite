@@ -25,24 +25,25 @@ WHERE column_name operator value;
 
 **Examples :**
 
-davisql> SELECT * FROM SCHEMATA;
-SCHEMA_NAME |
----- |
-information_schema |
+**davisql>** SELECT * FROM SCHEMATA;
 
-davisql> SELECT * FROM TABLES;
-+--------------------+--------------+------------+
+| SCHEMA_NAME |
+| ----------- |
+| information_schema |
+
+**davisql>** SELECT * FROM TABLES;
+
 | TABLE_SCHEMA       | TABLE_NAME   | TABLE_ROWS |
-+--------------------+--------------+------------+
+| ------------------ | ------------ | ---------- |
 | information_schema | SCHEMATA     | 1          |
 | information_schema | TABLES       | 3          |
 | information_schema | COLUMNS      | 7          |
-+--------------------+--------------+------------+
 
-davisql> SELECT * FROM COLUMNS;
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
+
+**davisql>** SELECT * FROM COLUMNS;
+
 | TABLE_SCHEMA       | TABLE_NAME  | COLUMN NAME      | ORDINAL_POSITION | COLUMN_TYPE | IS_NULLABLE | COLUMN_KEY |
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
+|--------------------|-------------|------------------|------------------|-------------|-------------|------------|
 | information_schema | SCHEMATA    | SCHEMA_NAME      | 1                | varchar(64) | NO          |            |
 | information_schema | TABLES      | TABLE_SCHEMA     | 1                | varchar(64) | NO          |            |
 | information_schema | TABLES      | TABLE_NAME       | 2                | varchar(64) | NO          |            |
@@ -54,41 +55,37 @@ davisql> SELECT * FROM COLUMNS;
 | information_schema | COLUMNS     | COLUMN_TYPE      | 5                | varchar(64) | NO          |            |
 | information_schema | COLUMNS     | IS_NULLABLE      | 6                | varchar(3)  | NO          |            |
 | information_schema | COLUMNS     | COLUMN_KEY       | 7                | varchar(3)  | NO          |            |
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
 
 
-davisql> CREATE SCHEMA Zoo_schema;
-
-
-davisql> CREATE TABLE Zoo (
+**davisql>** CREATE SCHEMA Zoo_schema;
+**davisql>** CREATE TABLE Zoo (
 Animal_ID INT PRIMARY KEY,
 Name VARCHAR(20),
 Sector SHORT INT
 );
 
-davisql> SELECT * FROM SCHEMATA;
-+--------------------+
+**davisql>** SELECT * FROM SCHEMATA;
+
 | SCHEMA_NAME        |
-+--------------------+
+|--------------------|
 | information_schema |
 | Zoo_schema         |
-+--------------------+
 
-davisql> SELECT * FROM TABLES;
-+--------------------+--------------+------------+
+
+**davisql>** SELECT * FROM TABLES;
+
 | TABLE_SCHEMA       | TABLE_NAME   | TABLE_ROWS |
-+--------------------+--------------+------------+
+|--------------------|--------------|------------|
 | information_schema | SCHEMATA     | 1          |
 | information_schema | TABLES       | 3          |
 | information_schema | COLUMNS      | 7          |
 | Zoo_schema         | Zoo          | 0          |
-+--------------------+--------------+------------+
 
 
-davisql> SELECT * FROM COLUMNS;
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
+**davisql>** SELECT * FROM COLUMNS;
+
 | TABLE_SCHEMA       | TABLE_NAME  | COLUMN NAME      | ORDINAL_POSITION | COLUMN_TYPE | IS_NULLABLE | COLUMN_KEY |
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
+|--------------------|-------------|------------------|------------------|-------------|-------------|------------|
 | information_schema | SCHEMATA    | SCHEMA_NAME      | 1                | varchar(64) | NO          |            |
 | information_schema | TABLES      | TABLE_SCHEMA     | 1                | varchar(64) | NO          |            |
 | information_schema | TABLES      | TABLE_NAME       | 2                | varchar(64) | NO          |            |
@@ -103,5 +100,6 @@ davisql> SELECT * FROM COLUMNS;
 | Zoo_schema         | Zoo         | Animal_ID        | 1                | int         | NO          | PRI        |
 | Zoo_schema         | Zoo         | Name             | 2                | varchar(20) | YES         |            |
 | Zoo_schema         | Zoo         | Sector           | 3                | short       | YES         |            |
-+--------------------+-------------+------------------+------------------+-------------+-------------+------------+
+
+
 
